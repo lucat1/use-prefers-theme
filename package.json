@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "name": "use-prefers-theme",
+  "author": "luca",
+  "module": "dist/use-prefers-theme.esm.js",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@types/react": "^16.9.26",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-test-renderer": "^16.9.2",
+    "husky": "^4.2.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "tsdx": "^0.13.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
+}
