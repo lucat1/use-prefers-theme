@@ -18,7 +18,6 @@ export const usePrefersTheme = (): Preference => {
   // first we check for environments which don't support
   // the required api (server-side, old browsers)
   if (!supported) {
-    console.log(window.matchMedia)
     return 'none'
   }
 
@@ -29,8 +28,11 @@ export const usePrefersTheme = (): Preference => {
   // we save the match variable to reuse the same query later on
   // in the event listener logic
   const match = makeMatch()
+
+  // eslint-disable-next-line
   const [preference, setPreference] = useState(pref(match))
 
+  // eslint-disable-next-line
   useEffect(() => {
     const handler = () => {
       setPreference(pref(match))
