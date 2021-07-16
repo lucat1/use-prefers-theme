@@ -2,9 +2,6 @@ import { useState, useEffect } from 'react'
 
 export type Preference = 'dark' | 'light' | 'none'
 
-// makeMatch executes the media query to check the preference
-const makeMatch = () => window.matchMedia('(prefers-color-scheme: dark)')
-
 // pref translates into our Preference type the value of the media query
 const pref = (match: MediaQueryList): Preference =>
   match.matches ? 'dark' : 'light'
@@ -27,7 +24,7 @@ export const usePrefersTheme = (): Preference => {
   // firstly we get the value at render time
   // we save the match variable to reuse the same query later on
   // in the event listener logic
-  const match = makeMatch()
+  const match = window.matchMedia('(prefers-color-scheme: dark)')
 
   // eslint-disable-next-line
   const [preference, setPreference] = useState(pref(match))
